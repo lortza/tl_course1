@@ -1,0 +1,19 @@
+Agenda:
+-Course overview
+  -Format
+  -Expectations
+-Using your editor
+-Ruby style guide
+-Ruby exercises
+  -Arrays and hashes
+
+-Simple calculator app
+  -var scope
+  -pass by vlue or reference?
+
+-Debugging
+
+-Kicking off the blackjack game
+-How to use solutions
+-Learn to Program
+  -push to Github
