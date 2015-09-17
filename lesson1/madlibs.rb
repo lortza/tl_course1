@@ -5,14 +5,8 @@
 # print out results
 
 
-# nouns = []
-# verbs = []
-# adjectives = []
-# adverbs = []
-# number = []
-# name = []
 
-dictionary = {:nouns => [], :verbs => [], :adjectives => [], :adverbs => []}
+#dictionary = {:nouns => [], :verbs => [], :adjectives => [], :adverbs => []}
 
 # puts "Welcome to MadLibs! We'll collect a lot of words and then use them in a story."
 # puts "Let's build a list of nouns (objects and places)."
@@ -34,7 +28,10 @@ dictionary = {:nouns => [], :verbs => [], :adjectives => [], :adverbs => []}
 
 # puts "Now, on with the show!"
 
-
+dictionary = {:nouns => ["ball", "door", "chair", "foot", "rug"],
+:verbs => ["sit", "stand", "fart", "scratch", "eat"],
+:adjectives => ["ugly", "fast", "tight", "rusty", "smelly"],
+:adverbs => ["sneakily", "snidely", "perversely", "accurately", "quickly"]}
 
 
 # error testing to make sure there is a source file
@@ -56,12 +53,24 @@ contents = File.open(ARGV[0], "r") do |f|
   f.read
 end
 
-p contents
-contents.close 
+contents.gsub!("NOUN").each do
+  dictionary[:nouns].pop
+end#noun
 
-nouns = ["ball", "door", "chair", "foot", "rug"]
-verbs = ["sit", "stand", "fart", "scratch", "eat"]
-adjectives = ["ugly", "fast", "tight", "rusty", "smelly"]
-adverbs = ["sneakily", "snidely", "perversely", "accurately", "quickly"]
+contents.gsub!("VERB").each do
+  dictionary[:verbs].pop
+end#verb
+
+contents.gsub!("ADJ").each do
+  dictionary[:adjectives].pop
+end#adj
+
+contents.gsub!("ADV").each do
+  dictionary[:adverbs].pop
+end#adv
+
+p contents
+
+
 
 
