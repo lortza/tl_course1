@@ -28,10 +28,35 @@
 
 # puts "Now, on with the show!"
 
-dictionary = {:nouns => ["ball", "door", "chair", "foot", "rug"],
-:verbs => ["sit", "stand", "fart", "scratch", "eat"],
-:adjectives => ["ugly", "fast", "tight", "rusty", "smelly"],
-:adverbs => ["sneakily", "snidely", "perversely", "accurately", "quickly"]}
+
+# static list of words
+# dictionary = {:nouns => ["ball", "door", "chair", "foot", "rug"],
+# :verbs => ["sit", "stand", "fart", "scratch", "eat"],
+# :adjectives => ["ugly", "fast", "tight", "rusty", "smelly"],
+# :adverbs => ["sneakily", "snidely", "perversely", "accurately", "quickly"]}
+
+# sourcing words from text files
+nouns_file = File.open('nouns.txt', "r") do |x|
+  x.read
+end.split.shuffle
+
+verbs_file = File.open('verbs.txt', "r") do |x|
+  x.read
+end.split.shuffle
+
+adjectives_file = File.open('adjectives.txt', "r") do |x|
+  x.read
+end.split.shuffle
+
+adverbs_file = File.open('adverbs.txt', "r") do |x|
+  x.read
+end.split.shuffle
+
+# calling those sourced words into the dictionary hash
+dictionary = {:nouns => nouns_file,
+:verbs => verbs_file,
+:adjectives => adjectives_file,
+:adverbs => adverbs_file}
 
 
 # error testing to make sure there is a source file
@@ -69,6 +94,7 @@ contents.gsub!("ADV").each do
   dictionary[:adverbs].pop
 end#adv
 
+# print out the story with all of the new sub words in place
 p contents
 
 
