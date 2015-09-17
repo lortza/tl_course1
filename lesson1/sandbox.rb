@@ -20,3 +20,9 @@ end
 name = "jim"
 cap(name)
 puts name           # => Jim
+
+
+
+
+
+

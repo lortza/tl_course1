@@ -5,6 +5,7 @@
 # print out results
 
 
+# THIS IS THE PART ABOUT ASKING A USER FOR WORDS
 
 #dictionary = {:nouns => [], :verbs => [], :adjectives => [], :adverbs => []}
 
@@ -26,15 +27,15 @@
 # puts "Thanks!"
 # end#each
 
-# puts "Now, on with the show!"
 
-
-# static list of words
+# THIS IS A LIST OF STATIC WORDS FOR TESTING
 # dictionary = {:nouns => ["ball", "door", "chair", "foot", "rug"],
 # :verbs => ["sit", "stand", "fart", "scratch", "eat"],
 # :adjectives => ["ugly", "fast", "tight", "rusty", "smelly"],
 # :adverbs => ["sneakily", "snidely", "perversely", "accurately", "quickly"]}
 
+
+# THIS CODE RUNS ON WORDS SOURCES FROM EXTERNAL FILES
 # sourcing words from text files
 nouns_file = File.open('nouns.txt', "r") do |x|
   x.read
