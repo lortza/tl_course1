@@ -25,3 +25,22 @@ class Owner
 end#class
 
 o = Owner.new
+
+
+#3 When running the following code, We get the following error...
+# test.rb:9:in `<main>': undefined method `name=' for
+#   #<Person:0x007fef41838a28 @name="Steve"> (NoMethodError)
+# Why do we get this error and how to we fix it?
+
+
+class Person
+  attr_reader :name
+  def initialize(n)
+    @name = n
+  end
+end
+
+bob = Person.new("Steve")
+bob.name = "Bob"
+
+#answer: because @name has not been authorized for modification, only for viewing. To change it, it sholuld be attr_accessor (or attr_writer).
