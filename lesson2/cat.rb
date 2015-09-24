@@ -36,7 +36,7 @@ class Cat
     #@catyears.to_i
   end #age_calculator
 
-  def self.all
+  def self.all # lists all instances of Cat
     ObjectSpace.each_object(self).to_a
   end
   
