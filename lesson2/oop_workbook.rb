@@ -35,3 +35,11 @@ c = Car.new
 t = Truck.new
 c.go_fast # => I am a Car and going super fast!
 t.go_fast # => I am a Car and going super fast!
+
+
+#3 In the last question we had a module called Speed which contained a go_fast method. We included this module in the Car class. When we called the go_fast method from an instance of the Car class (as shown below) you might have noticed that the string printed when we go fast includes the name of the type of vehicle we are using. How is this done?
+
+#answer: it came from the self.class in this line:
+puts "I am a #{self.class} and going super fast!"
+
+#4 If we have a class AngryCat how do we create a new instance of this class?
