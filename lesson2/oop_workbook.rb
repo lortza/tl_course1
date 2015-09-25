@@ -60,3 +60,40 @@ class Pizza
 end
 
 #answer: Pizza because @name has an @
+
+
+#6 What could we add to the class below to access the instance variable @volume?
+
+class Cube
+  # attr_accessor :volume
+  def initialize(volume)
+    @volume = volume
+  end #initialize
+end #Cube
+
+#solution A
+class Cube
+  attr_accessor :volume # => add this line
+  def initialize(volume)
+    @volume = volume
+  end #initialize
+end #Cube
+
+c = Cube.new(5)
+p c.volume # => to use this line
+
+# Solution B
+class Cube
+  def initialize(volume)
+    @volume = volume
+  end #initialize
+
+  def show_volume # => add this method to call the variable
+    @volume
+  end #show_volume
+end #Cube
+
+c = Cube.new(5)
+p c.show_volume # => to use this line
+
+
