@@ -258,4 +258,19 @@ excited_dog = "excited dog" # => regualar local variable
 @excited_dog = "excited dog" # => instance variable
 @@excited_dog = "excited dog" # => class variable
 
+# 6 If I have the following class, which one of these is a class method (if any) and how do you know? How would you call a class method?
+
+class Television
+  def self.manufacturer # class method b/c self
+    "manufacturer info goes here"
+    # method logic
+  end
+
+  def model
+    # method logic
+  end
+end
+
+Television.manufacturer # call it from the class itself
+
 
