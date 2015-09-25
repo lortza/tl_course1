@@ -120,6 +120,24 @@ end
 #answer: .self is referring to the instance of the class, not class itself
 
 
+# 9 If we have a class such as the one below. In the name of the cats_count method we have used self. What does self refer to in this context?
+
+class Cat
+  @@cats_count = 0
+
+  def initialize(type)
+    @type = type
+    @age  = 0
+    @@cats_count += 1
+  end
+
+  def self.cats_count
+    @@cats_count
+  end
+end
+
+#answer: the self in self.cats_count is making this a class level method. the self is referring to the class. this means it's counting the number of instance of the whole Cat class, not an individual instance of Cat.
+
 
 
 
