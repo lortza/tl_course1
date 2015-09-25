@@ -214,3 +214,39 @@ end
 p Orange.ancestors # => [Orange, Taste, Object, Kernel, BasicObject]
 p HotSauce.ancestors # => [HotSauce, Taste, Object, Kernel, BasicObject]
 
+
+#4 What could you add to this class to simplify it and remove two methods from the class definition while still maintaining the same functionality?
+
+class BeesWax
+  def initialize(type)
+    @type = type
+  end
+
+  def type
+    @type
+  end
+
+  def type=(t)
+    @type = t
+  end
+
+  def describe_type
+    puts "I am a #{@type} of Bees Wax"
+  end
+end
+
+#solution
+class BeesWax
+  attr_accessor :type # => add this guy and remove the other methods
+
+  def initialize(t)
+    @type = t
+  end
+
+  def describe_type
+    puts "I am a #{type} of Bees Wax" # => remove the @
+  end
+end
+
+b = BeesWax.new("waxy wax")
+b.describe_type # => I am a waxy wax of Bees Wax
