@@ -152,7 +152,23 @@ end #Bag
 #answer:
 b = Bag.new("brown", "paper")
 
+#============== Q2 =====================
+# http://www.gotealeaf.com/books/oo_workbook/read/easy_quiz_2
 
+#1 You are given the following code:
 
+class Oracle
+  def predict_the_future
+    "You will " + choices.sample
+  end
+
+  def choices
+    ["eat a nice lunch", "take a nap soon", "stay at work late"]
+  end
+end
+
+#What is the result of calling?
+oracle = Oracle.new
+oracle.predict_the_future # => a random sample from the array in the choices method
 
 
