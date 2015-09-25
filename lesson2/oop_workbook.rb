@@ -43,3 +43,4 @@ t.go_fast # => I am a Car and going super fast!
 puts "I am a #{self.class} and going super fast!"
 
 #4 If we have a class AngryCat how do we create a new instance of this class?
+x = AngryCat.new
