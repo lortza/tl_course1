@@ -97,3 +97,13 @@ c = Cube.new(5)
 p c.show_volume # => to use this line
 
 
+#7 What is the default thing that Ruby will print to the screen if you call to_s on an object? Where could you go to find out if you want to be sure?
+
+#answer: the id number of the instance of that class. go to irb and create an instance of a class. this will render the number.
+
+
+
+
+
+
+
