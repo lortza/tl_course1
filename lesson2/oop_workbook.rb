@@ -102,6 +102,24 @@ p c.show_volume # => to use this line
 #answer: the id number of the instance of that class. go to irb and create an instance of a class. this will render the number.
 
 
+#8 If we have a class such as the one below, You can see in the make_one_year_older method we have used self. What does self refer to here?
+
+class Cat
+  attr_accessor :type, :age
+
+  def initialize(type)
+    @type = type
+    @age  = 0
+  end
+
+  def make_one_year_older
+    self.age += 1
+  end
+end
+
+#answer: .self is referring to the instance of the class, not class itself
+
+
 
 
 
