@@ -139,6 +139,19 @@ end
 #answer: the self in self.cats_count is making this a class level method. the self is referring to the class. this means it's counting the number of instance of the whole Cat class, not an individual instance of Cat.
 
 
+#10 If we have the class below, what would you need to call to create a new instance of this class.
+
+class Bag
+  def initialize(color, material)
+    @color = color
+    @material = material
+  end #initialize
+end #Bag
+
+
+#answer:
+b = Bag.new("brown", "paper")
+
 
 
 
