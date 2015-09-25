@@ -44,3 +44,19 @@ puts "I am a #{self.class} and going super fast!"
 
 #4 If we have a class AngryCat how do we create a new instance of this class?
 x = AngryCat.new
+
+#5 Which of these two classes has an instance variable and how do you know?
+
+class Fruit
+  def initialize(name)
+    name = name
+  end
+end
+
+class Pizza
+  def initialize(name)
+    @name = name
+  end
+end
+
+#answer: Pizza because @name has an @
