@@ -273,4 +273,24 @@ end
 
 Television.manufacturer # call it from the class itself
 
+#7 If we have a class such as the one below, Explain what the @@cats_count variable does and how it works. What code would you need to write to test your theory?
 
+class Cat
+  @@cats_count = 0
+
+  def initialize(type)
+    @type = type
+    @age  = 0
+    @@cats_count += 1 # this is adding instances as they are initilaized
+  end
+
+  def self.cats_count # this is just showing the current value
+    @@cats_count
+  end
+end
+
+c1 = Cat.new("tabby")
+c2 = Cat.new("tortie")
+c3 = Cat.new("tuxie")
+
+p Cat.cats_count # calling cats_count on the class will reveal the qty of instances => 3
