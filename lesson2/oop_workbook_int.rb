@@ -143,3 +143,34 @@ def to_s
     glazing_string = @glazing ? " with #{@glazing}" : ''
     filling_string + glazing_string
   end
+
+
+# 6 If we have these two methods, What is the difference in the way the code works?
+
+class Computer
+  attr_accessor :template
+
+  def create_template
+    @template = "template 14231"
+  end #create_template
+
+  def show_template
+    template
+  end #show_template
+end #Computer
+
+
+class Computer
+  attr_accessor :template
+
+  def create_template
+    self.template = "template 14231"
+  end #create_template
+
+  def show_template
+    self.template
+  end #show_template
+end #Computer
+
+#answer: the self. is calling that method on the instance of the class. this is unnecesary as it is already an instance-level method. it works the same way as the other method, it's just bad practice. 
+
