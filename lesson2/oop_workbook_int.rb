@@ -174,3 +174,21 @@ end #Computer
 
 #answer: the self. is calling that method on the instance of the class. this is unnecesary as it is already an instance-level method. it works the same way as the other method, it's just bad practice. 
 
+
+#7 How could you change the method name below so that the method name is more clear and less repetitive.
+
+class Light
+  attr_accessor :brightness, :color
+
+  def initialize(brightness, color)
+    @brightness = brightness
+    @color = color
+  end
+
+  def self.light_information
+    "I want to turn on the light with a brightness level of super high and a colour of green"
+  end
+end #Light
+
+#answer, i would change self.light_information to self.make_superhigh_green
+
