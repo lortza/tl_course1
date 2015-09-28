@@ -395,4 +395,32 @@ Hello.hi # => this guy won't work because it's not a class-level method. it is l
 #2 If we call Hello.hi we get an error message. How would you fix this?
 # answer: see case 5 above.
 
+#3 When objects are created they are a separate realization of a particular class. Given the class below, how do we create two different instances of this class, both with separate names and ages?
+
+class AngryCat
+  def initialize(a, n)
+    @age  = a
+    @name = n 
+  end#initialize
+
+  def age
+    puts @age
+  end #age
+
+  def name
+    puts @name
+  end #name
+
+  def hiss
+    puts "Hisssss!!!"
+  end #hiss
+end #AngryCat
+
+#solution
+cat1 = AngryCat.new(2, "Zorro")
+cat2 = AngryCat.new(3, "DaBeef")
+p cat1 # => #<AngryCat:0x007fc8918c8730 @age=2, @name="Zorro">
+p cat2 # => #<AngryCat:0x007fc8918c86e0 @age=3, @name="DaBeef">
+
+
 
