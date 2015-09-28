@@ -348,3 +348,48 @@ p b.play # => "play two"
 #a - to me, objects make it easier to think about what is happening. if i know that everything is an object, i can predict the way it will behave. 
 #b - objects are easy to create and manipulate
 #c - it allows for encapsulation, which makes repeatable chunks of code reusable, making for more simple code even for complex programs
+
+
+#==================== Q3 =====================
+# http://www.gotealeaf.com/books/oo_workbook/read/easy_quiz_3
+
+#1 If we have this code, What happens in each of the following cases:
+
+class Greeting
+  def self.greet(message)
+    puts message
+  end
+end
+
+class Hello < Greeting
+  def hi
+    greet("Hello")
+  end
+end
+
+class Goodbye < Greeting
+  def bye
+    greet("Goodbye")
+  end
+end
+
+#case 1:
+hello = Hello.new
+hello.hi # => "Hello"
+
+#case 2:
+hello = Hello.new
+hello.bye # => undefined method error
+
+#case 3:
+hello = Hello.new
+hello.greet # => wrong number of arguments
+
+#case 4:
+hello = Hello.new
+hello.greet("Goodbye") # => "Goodbye"
+
+#case 5:
+Hello.hi # => this guy won't work because it's not a class-level method. it is looking like you need to make the greet method self.greet and then hi must be self.hi in order to call hi on a class.
+
+
