@@ -340,3 +340,11 @@ end
 
 b = Bingo.new
 p b.play # => "play two"
+
+
+#10 What are the benefits of using Object Oriented Programming in Ruby? Think of as many as you can.
+
+#answers: 
+#a - to me, objects make it easier to think about what is happening. if i know that everything is an object, i can predict the way it will behave. 
+#b - objects are easy to create and manipulate
+#c - it allows for encapsulation, which makes repeatable chunks of code reusable, making for more simple code even for complex programs
