@@ -392,4 +392,7 @@ hello.greet("Goodbye") # => "Goodbye"
 #case 5:
 Hello.hi # => this guy won't work because it's not a class-level method. it is looking like you need to make the greet method self.greet and then hi must be self.hi in order to call hi on a class.
 
+#2 If we call Hello.hi we get an error message. How would you fix this?
+# answer: see case 5 above.
+
 
