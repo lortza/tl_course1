@@ -132,3 +132,76 @@ class Catamaran < Vehicle
     # ... code omitted ...
   end #initialize
 end #Catamaran
+
+
+#3 Building on the prior vehicles question, we now must also track a basic motorboat. A motorboat has a single propeller and hull, but otherwise behaves similar to a catamaran. Therefore, creators of Motorboat instances don't need to specify number of hulls or propellers. How would you modify the vehicles code to incorporate a new Motorboat class?
+module WheeledVehicle
+  def initialize(tire_array)
+    @tires = tire_array
+  end #initialize
+
+  def tire_pressure(tire_index)
+    @tires[tire_index]
+  end #tire_pressure
+
+  def inflate_tire(tire_index, pressure)
+    @tires[tire_index] = pressure
+  end #inflate_tire
+end #WheeledVehicle
+
+
+module FloatingVehicle
+  def initialize(num_propellers, num_hulls, km_traveled_per_liter, liters_of_fuel_capacity)
+    # ... code omitted ...
+  end #initialize
+end #FloatingVehicle
+
+
+class Vehicle
+  attr_accessor :speed, :heading
+
+  def initialize(km_traveled_per_liter, liters_of_fuel_capacity)
+    @fuel_efficiency = km_traveled_per_liter
+    @fuel_capacity = liters_of_fuel_capacity
+  end
+
+  def range
+    @fuel_capacity * @fuel_efficiency
+  end
+end
+
+class Auto < Vehicle
+  include WheeledVehicle
+
+  def initialize
+    # 4 tires are various tire pressures
+    super([30,30,32,32], 50, 25.0)
+  end #initialize
+end #Auto
+
+class Motorcycle < Vehicle
+  include WheeledVehicle
+  def initialize
+    # 2 tires are various tire pressures along with 
+    super([20,20], 80, 8.0)
+  end #initialize
+end #Motorcycle
+
+class Catamaran < Vehicle
+  include FloatingVehicle
+  attr_accessor :propeller_count, :hull_count, :speed, :heading, :range
+end #Catamaran
+
+class Motorboat < Vehicle
+  include FloatingVehicle
+  attr_accessor :speed, :heading, :range
+
+  def initialize(km_traveled_per_liter, liters_of_fuel_capacity)
+    @num_propellers = 1
+    @num_hulls = 1
+    @km_traveled_per_liter = km_traveled_per_liter
+    @liters_of_fuel_capacity = liters_of_fuel_capacity
+  end #initialize
+
+end #Motorboat
+
