@@ -444,4 +444,21 @@ end
 c = Cat.new("tabby")
 p c.to_s
 
+#5 If I have the following class, What would happen if I called the methods like shown below?
 
+class Television
+  def self.manufacturer
+    puts "this is the self.manufacturer method"
+  end 
+
+  def model
+    puts "printing out the word model"
+  end
+end
+
+tv = Television.new
+tv.manufacturer # => no method error (because it doesn't exist)
+tv.model # => "printing out the word model"
+
+Television.manufacturer # => "this is the self.manufacturer method"
+Television.model # => undefined method b/c this is a not a class-level method
