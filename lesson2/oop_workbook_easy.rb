@@ -294,3 +294,27 @@ c2 = Cat.new("tortie")
 c3 = Cat.new("tuxie")
 
 p Cat.cats_count # calling cats_count on the class will reveal the qty of instances => 3
+
+#8 If we have these two classes, What can we add to the Bingo class to allow it to inherit the play method from the Game class?
+
+class Game
+  def play
+    "Start the game!"
+  end
+end
+
+class Bingo
+  def rules_of_play
+    #rules of play
+  end
+end
+
+
+# solution:
+
+class Bingo < Game
+  def rules_of_play
+    #rules of play
+  end
+end
+
