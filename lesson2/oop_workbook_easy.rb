@@ -500,3 +500,18 @@ c = Cat.new("tabby")
 p c.make_one_year_older
 
 
+#7 What is used in this class but doesn't add any value?
+
+class Light
+  attr_accessor :brightness, :color
+
+  def initialize(b, c)
+    @brightness = b
+    @color = c 
+  end #initialize
+
+  def self.information # this return is not needed. last line results are returned automatically.
+    return "I want to turn on the light with a brightness level of super high and a colour of green"
+  end #self.information
+
+end #Light
