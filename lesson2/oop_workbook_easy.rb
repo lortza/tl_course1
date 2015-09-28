@@ -318,3 +318,25 @@ class Bingo < Game
   end
 end
 
+
+#9 If we have these classes, What would happen if we added a play method to the Bingo class, keeping in mind that there is already a method of this name in the Game class that the Bingo class inherits from.
+
+class Game
+  def play
+    "Start the game!"
+  end
+end
+
+class Bingo < Game
+  def rules_of_play
+    #rules of play
+  end
+  def play
+    "play two"
+  end
+end
+
+#answer: the local play method inside the Bingo class would completely override the method from the Game class. It won't append like CSS does, it will just blow it away. So make sure in include any code you want to inherit. 
+
+b = Bingo.new
+p b.play # => "play two"
