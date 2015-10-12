@@ -76,69 +76,72 @@ x = Pet.new
 x.name_pet
 
 
-# Option Four: More Classes =========================================
+# Option Four: More Classes & Play Again Loop ===========================
 class Pet
+  
   ANIMALS = ["dog", "cat", "goat", "parakeet", "python"]
   COLORS = ["brown", "black", "yellow", "gray", "white", "patchy", "spotted", "marbled", "multicolored"]
-  DISPOSITIONS = ["chatty", "brutish", "skittish", "lap-sitting", "lovey", "standoffish", "chompey"]
+  DISPOSITIONS = ["chatty", "brutish", "skittish", "lap-sitting", "lovey", "standoffish", "chompey", "tree-climbing"]
 
-  def initialize
+  # def give_pet_name
+  #   @name_entry = "Alan"
+  # end #give_pet_name
+
+  def ask_for_name
+    puts "Please enter a name for your pet:" 
+    @name_entry = gets.chomp.capitalize
+    puts "Thank you."
+  end #ask_for_name
+
+  def generate_pet
     @pet = {}
-  end #initialize
-
-  def generate_attributes
+    @pet[:name] = @name_entry
     @pet[:animal] = ANIMALS.sample
     @pet[:color] = COLORS.sample
     @pet[:disposition] = DISPOSITIONS.sample
-    @pet 
-  end #generate_attributes
+    @pet   
+  end #generate_pet
 
-  def get_name
-    puts "Please enter a name for your pet:"
-    user_input = gets.chomp
-    @pet[:name] = user_input
-    @pet 
-  end #get_name
-
-  def display_pet
+  def announce_pet
     puts "Congratulations!"
-    puts "Your new pet #{@pet[:name]} is a #{@pet[:disposition]}, #{@pet[:color]} #{@pet[:animal]}."
-  end #display_pet
+    puts "Your pet #{@pet[:name]} is a #{@pet[:disposition]}, #{@pet[:color]} #{@pet[:animal]}." 
+  end #announce_pet
 end #Pet
 
 class Game
   def initialize
-    @pet = Pet.new 
+    @game_pet = Pet.new 
   end #initialize
-    
+
   def play_game
-    @pet.generate_attributes
-    @pet.get_name
-    @pet.display_pet
-   end #play_game
+    @game_pet.ask_for_name
+    #@game_pet.give_pet_name
+    @game_pet.generate_pet
+    @game_pet.announce_pet
+    play_again_query
+  end #play_game
+
+  def play_again_query
+    puts "Play again? Y | N?"
+    @input = gets.chomp.upcase 
+    if @input == "Y"
+      play_game
+    elsif @input == "N"
+      puts "Okay Bye."
+    else
+      while @input != "N" && @input != "Y"
+        puts "I'm sorry, that's not an option."
+        play_again_query
+      end #while
+    end #if
+  end #play_again_query
 end #Game
 
-def play_again_query
-  puts "Play again? Y | N"
-  @input = gets.chomp.upcase
-end #play_again_query
+g = Game.new
+g.play_game
 
-  
-game = Game.new
-game.play_game
-play_again_query
 
-while @input == "Y"
-  game = Game.new
-  game.play_game
-  play_again_query
-end #while
 
-while @input != "N"
-  puts "I'm sorry. That's not an option."
-  play_again_query
-end #while
- 
-puts "Okay good bye."
+
 
 
