@@ -3,7 +3,7 @@
 # create a new dog or cat with a color and disposition
 # enter a name for this pet
 
-Option One: Hashes =========================================
+#Option One: Hashes =========================================
 @colors = ["Brown", "Black", "Yellow", "Chocolate", "White", "Patchy", "Spotted", "Marbled"]
 @dispositions = ["Chatty", "Skittish", "Lap-sitting", "Outdoor-Only", "Lovey", "Standoffish"]
 @features = []
