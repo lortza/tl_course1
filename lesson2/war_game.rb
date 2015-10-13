@@ -1,4 +1,18 @@
-  
+class Player
+  attr_accessor :player_name
+  def initialize
+    @player_name
+    @computer_name 
+  end #initialize
+
+  def assign_name(input)
+    @player_name = input
+  end #assign_name
+    
+       
+end #Player
+      
+
 class Deck
   attr_accessor :deck
   
@@ -86,18 +100,24 @@ class Deck
  end #Deck
   
 def play_game
-  d = Deck.new
+  deck = Deck.new
+  player = Player.new
+
   puts "-----------//------------"
   puts "|   Welcome to War      |"
   puts "-----------//------------"
   puts
-  d.draw
-    while d.card_counter < 52
-      #puts "#{d.card_counter}"
+  puts "Please enter your name:"
+  player.assign_name(gets.chomp)
+  puts "Hit enter to start the first battle"
+  gets.chomp
+  deck.draw
+    while deck.card_counter < 52
+      #puts "#{deck.card_counter}"
       gets.chomp
-      d.draw
+      deck.draw
     end #while
-  puts d.announce_winner
+  puts deck.announce_winner
   play_again_query
    
 end #play_game
