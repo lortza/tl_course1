@@ -1,3 +1,5 @@
+# i created this card game of War. to play war, teh player and the computer each draw a card. the card with the higher value wins. the winner takes both cards and add them to his pile. ties get split. the winner is determined by who has the most cards at the end.  
+
 class Player
   attr_accessor :player_name
   def initialize
