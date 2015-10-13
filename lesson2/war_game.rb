@@ -6,8 +6,12 @@ class Player
   end #initialize
 
   def assign_name(input)
-    @player_name = input
+    @player_name = "#{input}"
   end #assign_name
+
+  def display_name(message)
+     puts "#{@player_name}, #{message}"
+  end #display_name
     
        
 end #Player
@@ -109,7 +113,8 @@ def play_game
   puts
   puts "Please enter your name:"
   player.assign_name(gets.chomp)
-  puts "Hit enter to start the first battle"
+  puts 
+  player.display_name("hit enter to start the first battle")
   gets.chomp
   deck.draw
     while deck.card_counter < 52
